@@ -9,7 +9,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file":"C:\\Users\\Zeesh\\Downloads\\GitHub\\TechWebsite"
+            "file":"C:\\Users\\Zeesh\\Downloads\\GitHub\\TechWebsite\\index.html"
         }
     ]
 }
