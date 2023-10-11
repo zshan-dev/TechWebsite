@@ -162,13 +162,14 @@
 
   .navbar__btn {
     padding-bottom: 2rem;
+    width: 100%; 
   }
 
   .button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     height: 80px;
     margin: 0;
   }
@@ -303,15 +304,19 @@
 }
 
 .main__img--container {
-  width: 100%; /* Adjust this percentage as needed */
-  height: auto; /* This will keep the aspect ratio intact */
-  overflow: hidden; /* This will clip the image if it overflows the container */
+  width: 100%; 
+  height: auto; 
+  overflow: hidden; 
 }
 
 #main__img {
-  width: 100%;  /* It will take the full width of its parent */
-  height: auto; /* This will keep the aspect ratio intact */
-  max-width: 800px; /* This is an example value; adjust as needed to cap the image width */
+  width: 100%;  
+  height: auto; 
+  max-width: 800px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 
@@ -364,7 +369,7 @@
   }
 
   .main__btn {
-    padding: 12px 36px;
+    padding: 12px 50px;
     margin: 2.5rem 0;
   }
 }

@@ -5,7 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 150vh;
+    max-width: 1500px;
   }
 
 .content h1{
@@ -25,6 +26,56 @@
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     margin-bottom: 5rem;
-    font-size: 2.5rem;
-    
+    font-size: 5rem;
+    padding-top: 12rem;
+}
+
+
+.content p {
+  color: #fff;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.text-section {
+  flex: 1; /* Take up available space */
+  margin-right: 2rem; /* Space between text and image */
+}
+
+.image-section {
+  flex-basis: 900px; /* Adjust based on your image width */
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.image-section img {
+  max-width: 700px; /* Ensure the image doesn't overflow */
+  height: 600px; /* Maintain the image's aspect ratio */
+}
+
+
+.main__img--container {
+  text-align: center;
+}
+
+#main__img {
+  height: 80%;
+  width: 80%;
+}
+
+.main__img--container {
+  width: 100%; 
+  height: auto; 
+  overflow: hidden; 
+}
+
+#main__img {
+  width: 100%;  
+  height: auto; 
+  max-width: 800px;
 }
