@@ -1,0 +1,19 @@
+.slider {
+    width: 100%;
+    max-width: 900px; /* Adjust the width as needed */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slide {
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  /* Style the active slide */
+  .slide.active {
+    display: block;
+  }
+
+  
