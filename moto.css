@@ -1,19 +1,20 @@
+/* Styling the slider container */
 .slider {
-    width: 100%;
-    max-width: 900px; /* Adjust the width as needed */
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .slide {
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-  
-  /* Style the active slide */
-  .slide.active {
-    display: block;
-  }
+  width: 100%; /* Ensuring the slider takes the full width of its container */
+  max-width: 900px; /* Setting a maximum width for the slider */
+  overflow: hidden; /* Hiding content that overflows the slider container */
+  position: relative; /* Setting the position as relative to position children slides accordingly */
+}
 
-  
+/* Styling individual slides */
+.slide {
+  width: 100%; /* Ensuring each slide takes the full width of the slider */
+  height: auto; /* Setting height as auto to maintain aspect ratio of content */
+  display: none; /* Hiding all slides by default */
+}
+
+/* Styling the currently active slide */
+/* The active slide will be displayed, overriding the 'display: none;' from the .slide rule */
+.slide.active {
+  display: block; /* Displaying the active slide as a block element */
+}

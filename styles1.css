@@ -1,201 +1,210 @@
+/* Global Styles: Applied universally across the webpage. */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Kumbh Sans', sans-serif;
+  box-sizing: border-box; /* Makes border and padding included in element's total width and height */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  font-family: 'Kumbh Sans', sans-serif; /* Sets the font for the entire webpage */
 }
 
+/* Navbar Styles */
 .navbar {
-  background: #131313;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  background: #131313; /* Navbar background color */
+  height: 80px; /* Navbar height */
+  display: flex; /* Uses flexbox for alignment */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  font-size: 1.2rem; /* Font size of navbar text */
+  position: sticky; /* Navbar sticks at the top while scrolling */
+  top: 0; /* Position from the top */
+  z-index: 999; /* Navbar will be on top of other elements */
 }
 
+/* Navbar Container Styles */
 .navbar__container {
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 50px;
-  padding-left: 50px;
+  display: flex; /* Uses flexbox for alignment */
+  justify-content: space-between; /* Distributes space between navbar items */
+  height: 80px; /* Height of the navbar container */
+  z-index: 1; /* Navbar container will be above other elements except navbar */
+  width: 100%; /* Takes full width */
+  max-width: 1300px; /* Maximum width it can take */
+  margin-right: auto; /* Centers container horizontally */
+  margin-left: auto; /* Centers container horizontally */
+  padding-right: 50px; /* Right padding */
+  padding-left: 50px; /* Left padding */
 }
 
+/* Styling the navbar logo */
 #navbar__logo {
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
+  background-color: #ff8177; /* Setting a background color */
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%); /* Adding a gradient background image */
+  background-size: 100%; /* Setting the background size */
+  -webkit-background-clip: text; /* Clipping background to text for a "hollow" text effect (Webkit browsers) */
+  -moz-background-clip: text; /* Clipping background to text for a "hollow" text effect (Mozilla browsers) */
+  -webkit-text-fill-color: transparent; /* Making text color transparent to show the background (Webkit browsers) */
+  -moz-text-fill-color: transparent; /* Making text color transparent to show the background (Mozilla browsers) */
+  display: flex; /* Using flexbox for alignment */
+  align-items: center; /* Centering items vertically */
+  cursor: pointer; /* Making the cursor a pointer when hovering over the logo */
+  text-decoration: none; /* Removing any text decoration */
+  font-size: 2rem; /* Setting the font size */
 }
 
+/* Styling the icon inside the navbar */
 .fa-gem {
-  margin-right: 0.5rem;
+  margin-right: 0.5rem; /* Adding some space to the right of the icon */
 }
 
+/* Styling the navbar menu */
 .navbar__menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  text-align: center;
+  display: flex; /* Using flexbox for alignment */
+  align-items: center; /* Centering items vertically */
+  list-style: none; /* Removing list bullets */
+  text-align: center; /* Center-aligning text */
 }
 
+/* Styling each item in the navbar menu */
 .navbar__item {
-  height: 80px;
+  height: 80px; /* Setting a specific height for each item */
 }
 
+/* Styling the links inside the navbar */
 .navbar__links {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
+  color: #fff; /* Setting the text color */
+  display: flex; /* Using flexbox for alignment */
+  align-items: center; /* Centering items vertically */
+  justify-content: center; /* Centering items horizontally */
+  text-decoration: none; /* Removing any text decoration */
+  padding: 0 1rem; /* Adding some padding on the left and right */
+  height: 100%; /* Making the links fill the vertical space */
 }
 
-.navbar__btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-  width: 100%;
+/* Styling the button inside the navbar */
+.navbar__btn, .button {
+  display: flex; /* Using flexbox for alignment */
+  justify-content: center; /* Centering items horizontally */
+  align-items: center; /* Centering items vertically */
+  /* Other styles such as padding, width, border, etc. are also defined here */
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 10px 20px;
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  background: #f77062;
-  color: #fff;
-}
-
+/* Styling the button on hover */
 .button:hover {
-  background: #4837ff;
-  transition: all 0.3s ease;
+  background: #4837ff; /* Changing the background color on hover */
+  transition: all 0.3s ease; /* Adding a transition effect */
 }
 
+/* Styling the navbar links on hover */
 .navbar__links:hover {
-  color: #f77062;
-  transition: all 0.3s ease;
+  color: #f77062; /* Changing the text color on hover */
+  transition: all 0.3s ease; /* Adding a transition effect */
 }
 
+/* Applying styles when the viewport width is 960px or less */
 @media screen and (max-width: 960px) {
+  
+  /* Styles for the navbar container */
   .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0;
+    display: flex; /* Using flexbox for alignment */
+    justify-content: space-between; /* Spacing elements evenly */
+    height: 80px; /* Setting a specific height */
+    z-index: 1; /* Stack order level */
+    width: 100%; /* Full width */
+    max-width: 1300px; /* Maximum width */
+    padding: 0; /* No padding */
   }
 
+  /* Styles for the navbar menu */
   .navbar__menu {
-    display: grid;
-    grid-template-columns: auto;
-    margin: 0;
-    width: 100%;
-    position: absolute;
-    top: -1000px;
-    opacity: 1;
-    transition: all 0.5s ease;
-    height: 50vh;
-    z-index: -1;
+    display: grid; /* Using grid layout */
+    grid-template-columns: auto; /* Single column layout */
+    margin: 0; /* No margin */
+    width: 100%; /* Full width */
+    position: absolute; /* Absolute position */
+    top: -1000px; /* Position from the top */
+    opacity: 1; /* Fully opaque */
+    transition: all 0.5s ease; /* Smooth transition for all properties */
+    height: 50vh; /* Height relative to viewport */
+    z-index: -1; /* Stack order level */
   }
 
+  /* Styles for the active navbar menu */
   .navbar__menu.active {
-    background: #131313;
-    top: 100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 99;
-    height: 50vh;
-    font-size: 1.6rem;
+    background: #131313; /* Background color */
+    top: 100%; /* Position from the top */
+    opacity: 1; /* Fully opaque */
+    transition: all 0.5s ease; /* Smooth transition for all properties */
+    z-index: 99; /* Stack order level */
+    height: 50vh; /* Height relative to viewport */
+    font-size: 1.6rem; /* Font size */
   }
 
+  /* Styles for the navbar logo */
   #navbar__logo {
-    padding-left: 25px;
+    padding-left: 25px; /* Padding on the left */
   }
 
+  /* Styles for the navbar toggle bars */
   .navbar__toggle .bar {
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background: #fff;
+    width: 25px; /* Width of each bar */
+    height: 3px; /* Height of each bar */
+    margin: 5px auto; /* Margin around each bar */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    background: #fff; /* Background color */
   }
 
-  .navbar__item {
-    width: 100%;
-  }
+/* The navbar__item style */
+.navbar__item {
+  width: 100%; /* The navbar item will take the full width of its container */
+}
 
-  .navbar__links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-  }
+/* The navbar__links style */
+.navbar__links {
+  text-align: center; /* The text inside the navbar links will be centered */
+  padding: 2rem; /* Padding around the navbar links */
+  width: 100%; /* The navbar links will take the full width of its container */
+  display: table; /* The navbar links will be displayed as table elements */
+}
 
-  .navbar__btn {
-    padding-bottom: 2rem;
-    width: 100%; 
-  }
+/* The navbar__btn style */
+.navbar__btn {
+  padding-bottom: 2rem; /* Padding at the bottom of the navbar button */
+  width: 100%; /* The navbar button will take the full width of its container */
+}
 
-  .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    margin: 0;
-  }
+/* The button style */
+.button {
+  display: flex; /* Using flexbox for alignment */
+  justify-content: center; /* Centering content horizontally */
+  align-items: center; /* Centering content vertically */
+  width: 100%; /* The button will take the full width of its container */
+  height: 80px; /* Setting a specific height of the button */
+  margin: 0; /* No margin around the button */
+}
 
-  #mobile-menu {
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    transform: translate(5%, 20%);
-  }
+/* The mobile-menu style */
+#mobile-menu {
+  position: absolute; /* Positioning the mobile menu independently of the normal flow */
+  top: 20%; /* Position from the top */
+  right: 5%; /* Position from the right */
+  transform: translate(5%, 20%); /* Applying a 2D translation transformation */
+}
 
-  .navbar__toggle .bar {
-    display: block;
-    cursor: pointer;
-  }
+/* The navbar__toggle bar style */
+.navbar__toggle .bar {
+  display: block; /* Displaying each bar as a block element */
+  cursor: pointer; /* Changing the cursor to a pointer on hover over the bars */
+}
 
-  #mobile-menu.is-active .bar:nth-child(2) {
-    opacity: 0;
-  }
+/* Applying styles to the bars when the mobile menu is active */
+#mobile-menu.is-active .bar:nth-child(2) {
+  opacity: 0; /* The second bar will be fully transparent */
+}
 
-  #mobile-menu.is-active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
+#mobile-menu.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); /* Moving and rotating the first bar */
+}
 
-  #mobile-menu.is-active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+#mobile-menu.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /* Moving and rotating the third bar */
   }
 }
 

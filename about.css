@@ -1,160 +1,71 @@
-/* Importing styles from styles1.css */
-@import "styles1.css";
-
+/* Background container to fill the space behind the about container */
 .background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh; /* Use min-height and vh (viewport height) */
-    background-color: #131313;
-    z-index: -1;
+    position: fixed; /* Fixes the position of the container in the viewport */
+    top: 0; /* Positions the container at the top of the viewport */
+    left: 0; /* Positions the container to the left of the viewport */
+    width: 100%; /* Makes the container take up the full width of the viewport */
+    min-height: 100vh; /* Ensures that the container has at least the height of the viewport */
+    background-color: #131313; /* Sets the background color of the container */
+    z-index: -1; /* Puts the container behind other positioned elements */
 }
-
-
-
-
 
 /* Styling for the about section */
 .about-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 70px;
-    background-color: #000000;
-    border-radius: 15px;
-    
+    max-width: 1200px; /* Sets a maximum width for the container */
+    margin: 50px auto; /* Centers the container horizontally and adds margin at the top and bottom */
+    padding: 70px; /* Adds internal space around the content inside the container */
+    background-color: #000000; /* Sets the background color of the container */
+    border-radius: 15px; /* Adds rounded corners to the container */
 }
 
 .about-container h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #fff;
+    font-size: 2.5em; /* Sets the font size of the heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+    color: #fff; /* Sets the text color of the heading */
 }
 
 .about-container p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    color: #fff;
+    font-size: 1.2em; /* Sets the font size of the paragraph */
+    line-height: 1.5; /* Sets the space between lines in the paragraph */
+    color: #fff; /* Sets the text color of the paragraph */
 }
 
+/* Styling for buttons */
 button {
-    font-size: 1rem;
-    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    padding: 14px 32px;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    margin-top: 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.35s;
-    outline: none;
-    padding: 12px 50px;
-    margin: 2.5rem 0;
-    z-index: 1;
+    font-size: 1rem; /* Sets the font size of the button text */
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%); /* Adds a gradient background color to the button */
+    padding: 12px 50px; /* Adds internal space within the button */
+    border: none; /* Removes the border around the button */
+    border-radius: 4px; /* Adds rounded corners to the button */
+    color: #fff; /* Sets the color of the button text */
+    margin: 2.5rem 0; /* Adds margin above and below the button */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    position: relative; /* Allows for positioning of child elements relative to this button */
+    transition: all 0.35s; /* Adds a transition effect to all properties of the button */
+    outline: none; /* Removes the focus outline from the button */
+    z-index: 1; /* Positions the button above the :after pseudo-element */
 }
 
 button:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #4837ff;
-    transition: all 0.35s;
-    border-radius: 4px;
-    z-index: -1;
+    position: absolute; /* Positions the pseudo-element relative to the button */
+    content: ''; /* Sets the content of the pseudo-element as empty */
+    top: 0; /* Positions the pseudo-element at the top of the button */
+    left: 0; /* Positions the pseudo-element at the left of the button */
+    width: 0; /* Initially sets the width of the pseudo-element to 0 */
+    height: 100%; /* Makes the pseudo-element take up the full height of the button */
+    background: #4837ff; /* Sets the background color of the pseudo-element */
+    transition: all 0.35s; /* Adds a transition effect to all properties of the pseudo-element */
+    border-radius: 4px; /* Adds rounded corners to the pseudo-element */
+    z-index: -1; /* Positions the pseudo-element behind the button text */
 }
 
 button:hover:after {
-    width: 100%;
+    width: 100%; /* Makes the pseudo-element take up the full width of the button on hover */
 }
-
-button span {
-    position: relative;
-    z-index: 3;
-}
-
 
 /* Styling for a hidden class */
-.hidden {
-    display: none;
-}
-.hidden-content {
-    display: none;
-}
-/* New styling for the cards */
-
-
-.card {
-    flex-basis: calc(33.333% - 20px);
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.card-content {
-    padding: 15px;
-}
-
-.card-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.card-text {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.card-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007BFF;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.card-button:hover {
-    background-color: #0056b3;
+.hidden, .hidden-content {
+    display: none; /* Hides the elements with this class */
 }
 
 
-/* Add this CSS to your existing styles1.css or about.css */
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.content-wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.about-container {
-    flex: 1;
-}
-
-.footer__container {
-    flex-shrink: 0;
-}
