@@ -22,7 +22,7 @@ The website is straightforward to run. You can simply load the HTML file in a we
 The website is user-friendly and intuitive. Users are encouraged to explore different sections to learn more about the company and its innovative tech products. There is no specific set of instructions; users can freely explore the website.
 
 ## Credits and Acknowledgements
-Inspiration for this website was drawn from various sources, including a tutorial by [Brian Design](https://www.youtube.com/watch?v=FazgJVnrVuI&ab_channel=BrianDesign). Additional knowledge was gained from various YouTubers and webpages to integrate specific features such as the dropdown button and slider in various plaecs in the website.
+Inspiration for this website was drawn from various sources, including a tutorial by [Brian Design](https://www.youtube.com/watch?v=FazgJVnrVuI&ab_channel=BrianDesign). Additional knowledge was gained from various YouTubers and webpages to integrate specific features such as the dropdown button and slider.
 
 ## Contact Information
 For further inquiries or support, please feel free to reach out via email: [1bombaywazee@hdsb.ca](mailto:1bombaywazee@hdsb.ca)
