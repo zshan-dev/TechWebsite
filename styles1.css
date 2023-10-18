@@ -1,652 +1,672 @@
-/* Global Styles: Applied universally across the webpage. */
 * {
-  box-sizing: border-box; /* Makes border and padding included in element's total width and height */
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  font-family: 'Kumbh Sans', sans-serif; /* Sets the font for the entire webpage */
+  box-sizing: border-box; /* Ensures padding and border are included in an element's total width and height */
+  margin: 0; /* Removes the default margin from all elements */
+  padding: 0; /* Removes the default padding from all elements */
+  font-family: 'Kumbh Sans', sans-serif; /* Sets a default font for all elements */
 }
 
-/* Navbar Styles */
 .navbar {
-  background: #131313; /* Navbar background color */
-  height: 80px; /* Navbar height */
-  display: flex; /* Uses flexbox for alignment */
+  background: #131313; /* Sets the background color of the navbar */
+  height: 80px; /* Sets the height of the navbar */
+  display: flex; /* Applies flexbox layout to the navbar, making child elements flex items */
+  justify-content: center; /* Centers flex items along the main axis */
+  align-items: center; /* Centers flex items along the cross axis */
+  font-size: 1.2rem; /* Sets the font size in the navbar */
+  position: sticky; /* Gives the navbar a sticky positioning, making it stick to the top of the viewport */
+  top: 0; /* Ensures the navbar sticks to the very top of the viewport */
+  z-index: 999; /* Gives the navbar a high stacking order */
+}
+
+.navbar__container {
+  display: flex; /* Applies flexbox layout to the container */
+  justify-content: space-between; /* Distributes space between child elements */
+  height: 80px; /* Sets the height of the container */
+  z-index: 1; /* Gives the container a specific stacking order */
+  width: 100%; /* Makes the container take up the full width of its parent */
+  max-width: 1300px; /* Sets a maximum width for the container */
+  margin-right: auto; /* Centers the container horizontally */
+  margin-left: auto; /* Centers the container horizontally */
+  padding-right: 50px; /* Adds padding to the right of the container */
+  padding-left: 50px; /* Adds padding to the left of the container */
+}
+
+#navbar__logo {
+  background-color: #ff8177; /* Sets a background color */
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%); /* Applies a linear gradient as the background image */
+  background-size: 100%; /* Ensures the background image covers the full element */
+  -webkit-background-clip: text; /* Clips the background image to the text (WebKit browsers) */
+  -moz-background-clip: text; /* Clips the background image to the text (Mozilla browsers) */
+  -webkit-text-fill-color: transparent; /* Makes the text fill color transparent (WebKit browsers) */
+  -moz-text-fill-color: transparent; /* Makes the text fill color transparent (Mozilla browsers) */
+  display: flex; /* Applies flexbox layout to the logo, allowing for alignment of child text */
+  align-items: center; /* Centers child text vertically */
+  cursor: pointer; /* Changes the cursor to a pointer on hover over the logo */
+  text-decoration: none; /* Removes any text decoration from the logo */
+  font-size: 2rem; /* Sets the font size of the logo text */
+}
+
+.fa-gem {
+  margin-right: 0.5rem; /* Adds spacing to the right of the icon */
+}
+
+.navbar__menu {
+  display: flex; /* Uses flexbox layout for the navbar menu items */
+  align-items: center; /* Centers the menu items vertically */
+  list-style: none; /* Removes the default list styling */
+  text-align: center; /* Centers the text in the menu items */
+}
+
+.navbar__item {
+  height: 80px; /* Sets a specific height for the navbar items */
+}
+
+.navbar__links {
+  color: #fff; /* Sets the text color of the navbar links */
+  display: flex; /* Uses flexbox layout for the navbar links */
+  align-items: center; /* Centers content vertically within the navbar links */
+  justify-content: center; /* Centers content horizontally within the navbar links */
+  text-decoration: none; /* Removes the underline from the navbar links */
+  padding: 0 1rem; /* Adds horizontal padding to the navbar links */
+  height: 100%; /* Makes the navbar links take up the full height of their parent */
+}
+
+.navbar__btn {
+  display: flex; /* Uses flexbox layout for the button */
+  justify-content: center; /* Centers content horizontally within the button */
+  align-items: center; /* Centers content vertically within the button */
+  padding: 0 1rem; /* Adds horizontal padding to the button */
+  width: 100%; /* Makes the button take up the full width of its parent */
+}
+
+.button {
+  display: flex; /* Uses flexbox layout for the button */
+  justify-content: center; /* Centers content horizontally within the button */
+  align-items: center; /* Centers content vertically within the button */
+  text-decoration: none; /* Removes any text underline from the button */
+  padding: 10px 20px; /* Adds padding to the button */
+  height: 100%; /* Makes the button take up the full height of its parent */
+  width: 100%; /* Makes the button take up the full width of its parent */
+  border: none; /* Removes the border from the button */
+  outline: none; /* Removes the default focus outline from the button */
+  border-radius: 4px; /* Adds rounded corners to the button */
+  background: #f77062; /* Sets the background color of the button */
+  color: #fff; /* Sets the text color of the button */
+}
+
+.button:hover {
+  background: #4837ff; /* Changes the background color when the button is hovered over */
+  transition: all 0.3s ease; /* Adds a smooth transition to the hover effect */
+}
+
+.navbar__links:hover {
+  color: #f77062; /* Changes the text color when a navbar link is hovered over */
+  transition: all 0.3s ease; /* Adds a smooth transition to the hover effect */
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__container {
+    display: flex; /* Uses flexbox layout for the navbar container */
+    justify-content: space-between; /* Distributes space between children of navbar container */
+    height: 80px; /* Sets a specific height for the navbar container */
+    z-index: 1; /* Stacking order value */
+    width: 100%; /* Makes the navbar container take up the full width of its parent */
+    max-width: 1300px; /* Maximum width of the naxvbar container */
+    padding: 0; /* No padding for the navbar container */
+  }
+
+  .navbar__menu {
+    display: grid; /* Uses grid layout for the navbar menu */
+    grid-template-columns: auto; /* Single column grid layout */
+    margin: 0; /* No margin for the navbar menu */
+    width: 100%; /* Makes the navbar menu take up the full width of its parent */
+    position: absolute; /* Positioning of navbar menu relative to the nearest positioned ancestor */
+    top: -1000px; /* Position from the top - used for hiding the menu offscreen */
+    opacity: 1; /* Fully visible navbar menu */
+    transition: all 0.5s ease; /* Smooth transition for all properties */
+    height: 50vh; /* Navbar menu height is 50% of the viewport height */
+    z-index: -1; /* Stacking order value - makes the navbar menu go behind other content */
+  }
+
+  .navbar__menu.active {
+    background: #131313; /* Set the background color of the active navbar menu */
+    top: 100%; /* Position the active navbar menu right below the navbar container */
+    opacity: 1; /* Make the active navbar menu fully visible */
+    transition: all 0.5s ease; /* Smooth transition effect for all properties */
+    z-index: 99; /* Stacking order value, ensuring it appears above most other elements */
+    height: 50vh; /* Set the height relative to 50% of the viewport height */
+    font-size: 1.6rem; /* Set the font size within the active navbar menu */
+  }
+
+#navbar__logo {
+    padding-left: 25px; /* Add padding to the left of the navbar logo */
+  }
+
+.navbar__toggle .bar {
+    width: 25px; /* Set the width of the toggle bar */
+    height: 3px; /* Set the height of the toggle bar */
+    margin: 5px auto; /* Center the toggle bar and add margin */
+    transition: all 0.3s ease-in-out; /* Smooth transition effect for all properties */
+    background: #fff; /* Set the background color of the toggle bar */
+  }
+
+.navbar__item {
+    width: 100%; /* Set the navbar item to occupy the full width of its container */
+  }
+
+.navbar__links {
+    text-align: center; /* Center-align the text within the navbar links */
+    padding: 2rem; /* Add padding within the navbar links */
+    width: 100%; /* Make the navbar links occupy the full width of their container */
+    display: table; /* Change the display value to table for alignment purposes */
+  }
+
+.navbar__btn {
+  padding-bottom: 2rem; /* Adds bottom padding to navbar button */
+  width: 100%; /* Ensures the button takes the full width of its container */
+  }
+
+.button {
+  display: flex; /* Enables flexible box layout */
   justify-content: center; /* Centers content horizontally */
   align-items: center; /* Centers content vertically */
-  font-size: 1.2rem; /* Font size of navbar text */
-  position: sticky; /* Navbar sticks at the top while scrolling */
-  top: 0; /* Position from the top */
-  z-index: 999; /* Navbar will be on top of other elements */
-}
-
-/* Navbar Container Styles */
-.navbar__container {
-  display: flex; /* Uses flexbox for alignment */
-  justify-content: space-between; /* Distributes space between navbar items */
-  height: 80px; /* Height of the navbar container */
-  z-index: 1; /* Navbar container will be above other elements except navbar */
-  width: 100%; /* Takes full width */
-  max-width: 1300px; /* Maximum width it can take */
-  margin-right: auto; /* Centers container horizontally */
-  margin-left: auto; /* Centers container horizontally */
-  padding-right: 50px; /* Right padding */
-  padding-left: 50px; /* Left padding */
-}
-
-/* Styling the navbar logo */
-#navbar__logo {
-  background-color: #ff8177; /* Setting a background color */
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%); /* Adding a gradient background image */
-  background-size: 100%; /* Setting the background size */
-  -webkit-background-clip: text; /* Clipping background to text for a "hollow" text effect (Webkit browsers) */
-  -moz-background-clip: text; /* Clipping background to text for a "hollow" text effect (Mozilla browsers) */
-  -webkit-text-fill-color: transparent; /* Making text color transparent to show the background (Webkit browsers) */
-  -moz-text-fill-color: transparent; /* Making text color transparent to show the background (Mozilla browsers) */
-  display: flex; /* Using flexbox for alignment */
-  align-items: center; /* Centering items vertically */
-  cursor: pointer; /* Making the cursor a pointer when hovering over the logo */
-  text-decoration: none; /* Removing any text decoration */
-  font-size: 2rem; /* Setting the font size */
-}
-
-/* Styling the icon inside the navbar */
-.fa-gem {
-  margin-right: 0.5rem; /* Adding some space to the right of the icon */
-}
-
-/* Styling the navbar menu */
-.navbar__menu {
-  display: flex; /* Using flexbox for alignment */
-  align-items: center; /* Centering items vertically */
-  list-style: none; /* Removing list bullets */
-  text-align: center; /* Center-aligning text */
-}
-
-/* Styling each item in the navbar menu */
-.navbar__item {
-  height: 80px; /* Setting a specific height for each item */
-}
-
-/* Styling the links inside the navbar */
-.navbar__links {
-  color: #fff; /* Setting the text color */
-  display: flex; /* Using flexbox for alignment */
-  align-items: center; /* Centering items vertically */
-  justify-content: center; /* Centering items horizontally */
-  text-decoration: none; /* Removing any text decoration */
-  padding: 0 1rem; /* Adding some padding on the left and right */
-  height: 100%; /* Making the links fill the vertical space */
-}
-
-/* Styling the button inside the navbar */
-.navbar__btn, .button {
-  display: flex; /* Using flexbox for alignment */
-  justify-content: center; /* Centering items horizontally */
-  align-items: center; /* Centering items vertically */
-  /* Other styles such as padding, width, border, etc. are also defined here */
-}
-
-/* Styling the button on hover */
-.button:hover {
-  background: #4837ff; /* Changing the background color on hover */
-  transition: all 0.3s ease; /* Adding a transition effect */
-}
-
-/* Styling the navbar links on hover */
-.navbar__links:hover {
-  color: #f77062; /* Changing the text color on hover */
-  transition: all 0.3s ease; /* Adding a transition effect */
-}
-
-/* Applying styles when the viewport width is 960px or less */
-@media screen and (max-width: 960px) {
-  
-  /* Styles for the navbar container */
-  .navbar__container {
-    display: flex; /* Using flexbox for alignment */
-    justify-content: space-between; /* Spacing elements evenly */
-    height: 80px; /* Setting a specific height */
-    z-index: 1; /* Stack order level */
-    width: 100%; /* Full width */
-    max-width: 1300px; /* Maximum width */
-    padding: 0; /* No padding */
+  width: 100%; /* Ensures the button takes the full width of its container */
+  height: 80px; /* Sets the height of the button */
+  margin: 0; /* Removes any margin from the button */
   }
 
-  /* Styles for the navbar menu */
-  .navbar__menu {
-    display: grid; /* Using grid layout */
-    grid-template-columns: auto; /* Single column layout */
-    margin: 0; /* No margin */
-    width: 100%; /* Full width */
-    position: absolute; /* Absolute position */
-    top: -1000px; /* Position from the top */
-    opacity: 1; /* Fully opaque */
-    transition: all 0.5s ease; /* Smooth transition for all properties */
-    height: 50vh; /* Height relative to viewport */
-    z-index: -1; /* Stack order level */
-  }
-
-  /* Styles for the active navbar menu */
-  .navbar__menu.active {
-    background: #131313; /* Background color */
-    top: 100%; /* Position from the top */
-    opacity: 1; /* Fully opaque */
-    transition: all 0.5s ease; /* Smooth transition for all properties */
-    z-index: 99; /* Stack order level */
-    height: 50vh; /* Height relative to viewport */
-    font-size: 1.6rem; /* Font size */
-  }
-
-  /* Styles for the navbar logo */
-  #navbar__logo {
-    padding-left: 25px; /* Padding on the left */
-  }
-
-  /* Styles for the navbar toggle bars */
-  .navbar__toggle .bar {
-    width: 25px; /* Width of each bar */
-    height: 3px; /* Height of each bar */
-    margin: 5px auto; /* Margin around each bar */
-    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
-    background: #fff; /* Background color */
-  }
-
-/* The navbar__item style */
-.navbar__item {
-  width: 100%; /* The navbar item will take the full width of its container */
-}
-
-/* The navbar__links style */
-.navbar__links {
-  text-align: center; /* The text inside the navbar links will be centered */
-  padding: 2rem; /* Padding around the navbar links */
-  width: 100%; /* The navbar links will take the full width of its container */
-  display: table; /* The navbar links will be displayed as table elements */
-}
-
-/* The navbar__btn style */
-.navbar__btn {
-  padding-bottom: 2rem; /* Padding at the bottom of the navbar button */
-  width: 100%; /* The navbar button will take the full width of its container */
-}
-
-/* The button style */
-.button {
-  display: flex; /* Using flexbox for alignment */
-  justify-content: center; /* Centering content horizontally */
-  align-items: center; /* Centering content vertically */
-  width: 100%; /* The button will take the full width of its container */
-  height: 80px; /* Setting a specific height of the button */
-  margin: 0; /* No margin around the button */
-}
-
-/* The mobile-menu style */
 #mobile-menu {
-  position: absolute; /* Positioning the mobile menu independently of the normal flow */
-  top: 20%; /* Position from the top */
-  right: 5%; /* Position from the right */
-  transform: translate(5%, 20%); /* Applying a 2D translation transformation */
-}
+  position: absolute; /* Positioning is set relative to the nearest positioned ancestor */
+  top: 20%; /* Positions the menu vertically at 20% from the top of the position context */
+  right: 5%; /* Positions the menu horizontally at 5% from the right of the position context */
+  transform: translate(5%, 20%); /* Adjusts the position of the menu */
+  }
 
-/* The navbar__toggle bar style */
 .navbar__toggle .bar {
-  display: block; /* Displaying each bar as a block element */
-  cursor: pointer; /* Changing the cursor to a pointer on hover over the bars */
-}
+  display: block; /* Makes the toggle bar a block element */
+  cursor: pointer; /* Makes the cursor a pointer when hovering over the toggle bar */
+  }
 
-/* Applying styles to the bars when the mobile menu is active */
 #mobile-menu.is-active .bar:nth-child(2) {
-  opacity: 0; /* The second bar will be fully transparent */
-}
+  opacity: 0; /* Hides the middle bar when the menu is active */
+  }
 
 #mobile-menu.is-active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg); /* Moving and rotating the first bar */
-}
+  transform: translateY(8px) rotate(45deg); /* Moves and rotates the first bar when the menu is active */
+  }
 
 #mobile-menu.is-active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg); /* Moving and rotating the third bar */
+  transform: translateY(-8px) rotate(-45deg); /* Moves and rotates the third bar when the menu is active */
   }
 }
 
 /* Main Content CSS */
+
+/* Styling for the main section */
 .main {
-  background-color: #131313;
+  background-color: #131313; /* Setting background color of the main section */
 }
 
+/* Styling for the main container */
 .main__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-self: center;
-  margin: 0 auto;
-  height: 90vh;
-  background-color: #131313;
-  z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  padding-right: 50px;
-  padding-left: 50px;
+  display: grid; /* Using grid layout */
+  grid-template-columns: 1fr 1fr; /* Dividing the container into two equal columns */
+  align-items: center; /* Vertically centering items */
+  justify-self: center; /* Horizontally centering the grid itself */
+  margin: 0 auto; /* Centering the container */
+  height: 90vh; /* Setting the height to 90% of the viewport height */
+  background-color: #131313; /* Setting background color */
+  z-index: 1; /* Stacking order */
+  width: 100%; /* Full width of its container */
+  max-width: 1300px; /* Maximum width allowed */
+  padding-right: 50px; /* Right padding */
+  padding-left: 50px; /* Left padding */
 }
 
+/* Styling for the main content */
 .main__content {
-  color: #fff;
-  width: 100%;
+  color: #fff; /* Text color */
+  width: 100%; /* Full width of its container */
 }
 
 .main__content h1 {
-  font-size: 4rem;
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  font-size: 4rem; /* Sets the font size of the h1 element within .main__content */
+  background-color: #ff8177; /* Sets a fallback background color */
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%); /* Applies a linear gradient as the background image */
+  background-size: 100%; /* Ensures the background image covers the full element */
+  -webkit-background-clip: text; /* Clips the background image to the text (WebKit browsers) */
+  -moz-background-clip: text; /* Clips the background image to the text (Mozilla browsers) */
+  -webkit-text-fill-color: transparent; /* Makes the text fill color transparent (WebKit browsers) */
+  -moz-text-fill-color: transparent; /* Makes the text fill color transparent (Mozilla browsers) */
 }
 
 .main__content h2 {
-  font-size: 4rem;
-  margin-top: 10px;
-  background-color: #ff8177;
-  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  font-size: 4rem; /* Sets the font size of the h2 element within .main__content */
+  margin-top: 10px; /* Adds space above the h2 element */
+  background-color: #ff8177; /* Sets a fallback background color */
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%); /* Applies a linear gradient as the background image */
+  background-size: 100%; /* Ensures the background image covers the full element */
+  -webkit-background-clip: text; /* Clips the background image to the text (WebKit browsers) */
+  -moz-background-clip: text; /* Clips the background image to the text (Mozilla browsers) */
+  -webkit-text-fill-color: transparent; /* Makes the text fill color transparent (WebKit browsers) */
+  -moz-text-fill-color: transparent; /* Makes the text fill color transparent (Mozilla browsers) */
 }
 
 .main__content p {
-  margin-top: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
+  margin-top: 1rem; /* Adds space above the paragraph element */
+  font-size: 2rem; /* Sets the font size of the paragraph */
+  font-weight: 700; /* Makes the text bold */
 }
 
 .main__btn {
-  font-size: 1rem;
-  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-  padding: 14px 32px;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  margin-top: 2rem;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.35s;
-  outline: none;
+  font-size: 1rem; /* Sets the font size of the button text */
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%); /* Applies a linear gradient as the background image */
+  padding: 14px 32px; /* Sets the padding inside the button */
+  border: none; /* Removes the border from the button */
+  border-radius: 4px; /* Rounds the corners of the button */
+  color: #fff; /* Sets the button text color to white */
+  margin-top: 2rem; /* Adds space above the button */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  position: relative; /* Positions the button relative to its normal position */
+  transition: all 0.35s; /* Adds a transition effect to all properties of the button */
+  outline: none; /* Removes the default focus outline from the button */
 }
 
+/* Styling for the link within the main button */
 .main__btn a {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  text-decoration: none;
+  position: relative; /* Positioning relative to its normal position */
+  z-index: 2; /* Stacking order above the ::after pseudo-element */
+  color: #fff; /* Text color */
+  text-decoration: none; /* No underlines or overlines */
 }
 
 .main__btn:after {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #4837ff;
-  transition: all 0.35s;
-  border-radius: 4px;
+  position: absolute; /* Positions the pseudo-element relative to the .main__btn element */
+  content: ''; /* Necessary for the pseudo-element to be displayed */
+  top: 0; /* Aligns the pseudo-element to the top of the .main__btn element */
+  left: 0; /* Aligns the pseudo-element to the left of the .main__btn element */
+  width: 0; /* Initial width of the pseudo-element; it's invisible at the start */
+  height: 100%; /* Makes the height of the pseudo-element equal to the .main__btn element */
+  background: #4837ff; /* Background color of the pseudo-element */
+  transition: all 0.35s; /* Applies a transition effect to all properties, lasting 0.35 seconds */
+  border-radius: 4px; /* Rounds the corners of the pseudo-element */
 }
 
 .main__btn:hover {
-  color: #fff;
+  color: #fff; /* Changes the text color of the button to white when hovered */
 }
 
 .main__btn:hover:after {
-  width: 100%;
+  width: 100%; /* On hover, the pseudo-element's width expands to cover the whole button */
 }
 
 .main__img--container {
-  text-align: center;
+  text-align: center; /* Centers the content within the .main__img--container element */
 }
 
 #main__img {
-  height: 80%;
-  width: 80%;
+  height: 80%; /* Sets the height of the image to be 80% of the containing element */
+  width: 80%; /* Sets the width of the image to be 80% of the containing element */
 }
 
+/* Styling for the image container */
 .main__img--container {
-  width: 100%; 
-  height: auto; 
-  overflow: hidden; 
+  text-align: center; /* Centering content */
+  width: 100%; /* Full width of its container */
+  height: auto; /* Height adjusted automatically based on content */
+  overflow: hidden; /* Hiding overflow content */
 }
 
+/* Styling for the image within the container */
 #main__img {
-  width: 100%;  
-  height: auto; 
-  max-width: 800px;
+  height: 80%; /* Height is 80% of its container */
+  width: 80%; /* Width is 80% of its container */
+  max-width: 800px; /* Maximum width allowed */
 }
 
+/* Styling for the HTML element, applying smooth scrolling */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
+/* Styling for the body, setting up a flex container */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0; /* Ensure no default margin */
+  display: flex; /* Using flexbox layout */
+  flex-direction: column; /* Orienting children elements in a column */
+  min-height: 100vh; /* Minimum height is 100% of the viewport height */
+  margin: 0; /* No outer margin */
 }
 
+/* Styling for the content wrapper */
 .content-wrapper {
-  flex: 1;
+  flex: 1; /* Growing factor, allowing it to take available space */
 }
 
-
-/* Mobile Responsive */
+/* Mobile Responsive styles applied when the viewport width is 768 pixels or less */
 @media screen and (max-width: 768px) {
+  /* Styling for the main container */
   .main__container {
-    display: grid;
-    grid-template-columns: auto;
-    align-items: center;
-    justify-self: center;
-    width: 100%;
-    margin: 0 auto;
-    height: 90vh;
+    display: grid; /* Using grid layout */
+    grid-template-columns: auto; /* Having one column that takes up all available space */
+    align-items: center; /* Centering items vertically */
+    justify-self: center; /* Centering the grid itself horizontally */
+    width: 100%; /* Grid taking the full width of its container */
+    margin: 0 auto; /* Centering the grid horizontally */
+    height: 90vh; /* Grid height is 90% of the viewport height */
   }
 
+  /* Styling for the main content within the main container */
   .main__content {
-    text-align: center;
-    margin-bottom: 4rem;
+    text-align: center; /* Center aligning text */
+    margin-bottom: 4rem; /* Margin at the bottom of the content */
   }
 
+  /* Styling for the h1 heading within the main content */
   .main__content h1 {
-    font-size: 2.5rem;
-    margin-top: 2rem;
+    font-size: 2.5rem; /* Font size of the heading */
+    margin-top: 2rem; /* Margin at the top of the heading */
   }
 
+  /* Styling for the h2 heading within the main content */
   .main__content h2 {
-    font-size: 3rem;
+    font-size: 3rem; /* Font size of the heading */
   }
 
+  /* Styling for the paragraph within the main content */
   .main__content p {
-    margin-top: 1rem;
-    font-size: 1.5rem;
+    margin-top: 1rem; /* Margin at the top of the paragraph */
+    font-size: 1.5rem; /* Font size of the paragraph */
   }
 }
 
+/* Mobile Responsive styles applied when the viewport width is 480 pixels or less */
 @media screen and (max-width: 480px) {
+  /* Styling for the h1 heading within the main content */
   .main__content h1 {
-    font-size: 2rem;
-    margin-top: 3rem;
+    font-size: 2rem; /* Font size of the heading */
+    margin-top: 3rem; /* Margin at the top of the heading */
   }
 
+  /* Styling for the h2 heading within the main content */
   .main__content h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Font size of the heading */
   }
 
+  /* Styling for the paragraph within the main content */
   .main__content p {
-    margin-top: 2rem;
-    font-size: 1.5rem;
+    margin-top: 2rem; /* Margin at the top of the paragraph */
+    font-size: 1.5rem; /* Font size of the paragraph */
   }
 
+  /* Styling for the main button within the main content */
   .main__btn {
-    padding: 12px 50px;
-    margin: 2.5rem 0;
+    padding: 12px 50px; /* Padding inside the button */
+    margin: 2.5rem 0; /* Margin at the top and bottom of the button */
   }
 }
+
 
 /* Services Section */
+
+/* Styling for the entire services section */
 .services {
-  background: #131313;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 135vh;
+  background: #131313; /* Background color is a dark grey/black */
+  display: flex; /* Using Flexbox for alignment of child elements */
+  flex-direction: column; /* Child elements are placed in a column sequence */
+  justify-content: center; /* Centrally aligning children vertically */
+  align-items: center; /* Centrally aligning children horizontally */
+  height: 135vh; /* Setting a relative height based on the viewport height */
 }
 
+/* Styling for the heading within the services section */
 .services h1 {
-  background-color: #ff8177;
+  background-color: #ff8177; /* Background color applied behind text */
   background-image: linear-gradient(
     to right,
-    #ff8177 0%,
-    #ff867a 0%,
-    #ff8c7f 21%,
-    #f99185 52%,
-    #cf556c 78%,
-    #b12a5b 100%
-  );
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  margin-bottom: 5rem;
-  font-size: 2.5rem;
+    #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%
+  ); /* Applying a gradient as the background image behind the text */
+  background-size: 100%; /* Making sure the background image covers the full element */
+  -webkit-background-clip: text; /* Applying background clipping to text for a "see-through" text effect */
+  -moz-background-clip: text; /* Same as above, for Firefox */
+  -webkit-text-fill-color: transparent; /* Making the text color transparent to see the background */
+  -moz-text-fill-color: transparent; /* Same as above, for Firefox */
+  margin-bottom: 5rem; /* Bottom margin applied for spacing */
+  font-size: 2.5rem; /* Font size of the heading text */
 }
 
+/* Styling for the container that holds service cards */
 .services__container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 0rem;
+  display: flex; /* Using Flexbox for alignment of child elements/cards */
+  justify-content: center; /* Centrally aligning children/cards horizontally */
+  flex-wrap: wrap; /* Allowing child elements/cards to wrap to the next line */
+  margin-top: 0rem; /* Top margin applied to the container */
 }
 
+/* Styling for individual service cards within the services section */
 .services__card {
-  margin: 1rem;
-  height: 525px;
-  width: 400px;
-  border-radius: 4px;
+  margin: 1rem; /* Margin around each card for spacing */
+  height: 525px; /* Fixed height of the card */
+  width: 400px; /* Fixed width of the card */
+  border-radius: 4px; /* Rounded corners of the card */
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0) 0%,
       rgba(17, 17, 17, 0.6) 100%
     ),
-    url('images/pic3.jpg');
-  background-size: cover;
-  position: relative;
-  color: #fff;
+    url('images/pic3.jpg'); /* Gradient overlay on top of an image in the card */
+  background-size: cover; /* Ensures the background image covers the entire card */
+  position: relative; /* Positioning context for absolute positioned child elements */
+  color: #fff; /* Text color within the card is white */
 }
 
-.services__card:before {
-  opacity: 0.5;
-}
-
+/* Styling for the second service card - changing the background image */
 .services__card:nth-child(2) {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0) 0%,
       rgba(17, 17, 17, 0.9) 100%
     ),
-    url('Images/pic4.jpg');
+    url('Images/pic4.jpg'); /* Different gradient and image for the second card */
 }
 
+/* Styling for the heading within each service card */
 .services__card h2 {
-  position: absolute;
-  top: 350px;
-  left: 30px;
+  position: absolute; /* Absolute position within the card */
+  top: 350px; /* Distance from the top of the card */
+  left: 30px; /* Distance from the left of the card */
 }
 
+/* Styling for the paragraph within each service card */
 .services__card p {
-  position: absolute;
-  top: 400px;
-  left: 30px;
+  position: absolute; /* Absolute position within the card */
+  top: 400px; /* Distance from the top of the card */
+  left: 30px; /* Distance from the left of the card */
 }
 
+/* Styling for the button within each service card */
 .services__card button {
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  background: #f77062;
-  position: absolute;
-  top: 420px;
-  left: 30px;
-  font-size: 1rem;
+  color: #fff; /* Text color within the button is white */
+  padding: 10px 20px; /* Padding inside the button */
+  border: none; /* No border for the button */
+  outline: none; /* No outline for the button */
+  border-radius: 4px; /* Rounded corners of the button */
+  background: #f77062; /* Background color of the button */
+  position: absolute; /* Absolute position within the card */
+  top: 420px; /* Distance from the top of the card */
+  left: 30px; /* Distance from the left of the card */
+  font-size: 1rem; /* Font size within the button */
 }
 
+/* Hover effect for the button within each service card */
 .services__card button:hover {
-  cursor: pointer;
+  cursor: pointer; /* Changing the cursor to a pointer(hand) on hover */
 }
 
+
+/* Hover effect for each service card */
 .services__card:hover {
-  transform: scale(1.075);
-  transition: 0.2s ease-in;
-  cursor: pointer;
+  transform: scale(1.075); /* Scaling the size of the card on hover */
+  transition: 0.2s ease-in; /* Smooth transition for the hover effect */
+  cursor: pointer; /* Changing the cursor to a pointer(hand) on hover */
 }
 
+/* Media Queries for responsive design */
 @media screen and (max-width: 960px) {
   .services {
-    height: 1600px;
+    height: 1600px; /* Adjusting the height of services section for devices with max-width 960px */
   }
 
   .services h1 {
-    font-size: 2rem;
-    margin-top: 12rem;
+    font-size: 2rem; /* Adjusting the font size of the h1 tag in services section */
+    margin-top: 12rem; /* Adjusting the top margin of the h1 tag in services section */
   }
 }
 
 @media screen and (max-width: 480px) {
   .services {
-    height: 1400px;
+    height: 1400px; /* Adjusting the height of services section for devices with max-width 480px */
   }
 
   .services h1 {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Adjusting the font size of the h1 tag in services section for smaller screens */
   }
 
   .services__card {
-    width: 300px;
+    width: 300px; /* Adjusting the width of service cards for smaller screens */
   }
 }
 
 /* Footer CSS */
 .footer__container {
-  background-color: #1f1f1f;
-  padding: 3rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #1f1f1f; /* Setting the background color of the footer container */
+  padding: 3rem 0; /* Adding padding to the top and bottom of the footer container */
+  display: flex; /* Using flexbox to arrange items within the footer container */
+  flex-direction: column; /* Arranging the flex items in a column */
+  justify-content: center; /* Centering items along the line */
+  align-items: center; /* Aligning items on the cross axis */
 }
 
 #footer__logo {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
+  color: #fff; /* Setting the color of the footer logo to white */
+  display: flex; /* Using flexbox for positioning and alignment */
+  align-items: center; /* Vertically centering items within the footer logo */
+  cursor: pointer; /* Changing the cursor to a pointer when hovering over the footer logo */
+  text-decoration: none; /* Removing any text decoration from the footer logo */
+  font-size: 2rem; /* Setting the font size of the footer logo */
 }
 
 .footer__links {
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  justify-content: center;
+  width: 100%; /* Setting the width of the footer links to occupy the full width */
+  max-width: 1000px; /* Setting a maximum width for the footer links */
+  display: flex; /* Using flexbox to arrange items within the footer links */
+  justify-content: center; /* Centering items horizontally within the footer links */
 }
 
 .footer__link--wrapper {
-  display: flex;
+  display: flex; /* Using flexbox for positioning and alignment of link wrappers */
 }
 
 .footer__link--items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 16px;
-  text-align: left;
-  width: 160px;
-  box-sizing: border-box;
+  display: flex; /* Using flexbox for positioning and alignment of link items */
+  flex-direction: column; /* Arranging the links in a column */
+  align-items: flex-start; /* Aligning items to the start of the cross axis */
+  margin: 16px; /* Adding margin around each link item */
+  text-align: left; /* Aligning the text to the left */
+  width: 160px; /* Setting a specific width for the link items */
+  box-sizing: border-box; /* Including padding and border in the element's total width and height */
 }
 
 .footer__link--items h2 {
-  margin-bottom: 16px;
+  margin-bottom: 16px; /* Adding margin below each heading in the link items */
 }
 
 .footer__link--items > h2 {
-  color: #fff;
+  color: #fff; /* Setting the color of the headings to white */
 }
 
 .footer__link--items a {
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
+  color: #fff; /* Setting the color of the links to white */
+  text-decoration: none; /* Removing any text decoration from the links */
+  margin-bottom: 0.5rem; /* Adding margin below each link */
 }
 
 .footer__link--items a:hover {
-  color: #e9e9e9;
-  transition: 0.3s ease-out;
+  color: #e9e9e9; /* Changing the color of the links when hovered over */
+  transition: 0.3s ease-out; /* Adding a transition effect to the color change on hover */
 }
+
 
 /* Social Icons */
 .social__icon--link {
-  color: #fff;
-  font-size: 24px;
+  color: #fff; /* Setting the color of the social icons to white */
+  font-size: 24px; /* Setting the font size of the social icons */
 }
 
 .social__media {
-  max-width: 1000px;
-  width: 100%;
+  max-width: 1000px; /* Setting the maximum width of the social media section */
+  width: 100%; /* Ensuring the social media section takes up the full width available */
 }
 
 .social__media--wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto 0 auto;
+  display: flex; /* Using flexbox for alignment and positioning */
+  justify-content: space-between; /* Distributing space between items evenly */
+  align-items: center; /* Centering items vertically */
+  width: 90%; /* Setting the width of the container to 90% of the parent */
+  max-width: 1000px; /* Setting maximum width of the container */
+  margin: 40px auto 0 auto; /* Setting the margin to position the container */
 }
 
 .social__icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
+  display: flex; /* Using flexbox for alignment and positioning */
+  justify-content: space-between; /* Distributing space between icons evenly */
+  align-items: center; /* Centering icons vertically */
+  width: 240px; /* Setting the width of the icons container */
 }
 
+/* Styling Social logo */
 .social__logo {
-  color: #fff;
-  justify-self: start;
-  margin-left: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
+  color: #fff; /* Setting the color of the social logo to white */
+  justify-self: start; /* Aligning the logo to the start of the flex container */
+  margin-left: 20px; /* Adding space to the left of the logo */
+  cursor: pointer; /* Setting the cursor appearance to indicate clickable areas */
+  text-decoration: none; /* Removing underline from the logo text */
+  font-size: 2rem; /* Setting the font size of the logo */
+  display: flex; /* Using flexbox for alignment and positioning */
+  align-items: center; /* Centering the logo vertically */
+  margin-bottom: 16px; /* Adding space below the logo */
 }
 
 .website__rights {
-  color: #fff;
+  color: #fff; /* Setting the color of the website rights text to white */
 }
 
+/* Media query for viewports up to 820px wide */
 @media screen and (max-width: 820px) {
   .footer__links {
-    padding-top: 2rem;
+    padding-top: 2rem; /* Adding padding to the top of the footer links */
   }
 
   #footer__logo {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Adding margin below the footer logo */
   }
 
   .website__rights {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Adding margin below the website rights text */
   }
 
   .footer__link--wrapper {
-    flex-direction: column;
+    flex-direction: column; /* Changing the flex direction to column for responsiveness */
   }
 
   .social__media--wrap {
-    flex-direction: column;
+    flex-direction: column; /* Changing the flex direction to column for responsiveness */
   }
 }
 
+/* Media query for viewports up to 480px wide */
 @media screen and (max-width: 480px) {
   .footer__link--items {
-    margin: 0;
-    padding: 10px;
-    width: 100%;
+    margin: 0; /* Removing margin from the footer link items */
+    padding: 10px; /* Adding padding to the footer link items */
+    width: 100%; /* Setting the width of the footer link items to 100% */
   }
 }
